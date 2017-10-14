@@ -1,0 +1,8 @@
+{
+  "name": "CodeCrush",
+  "short_name": "CodeCrush",
+  "start_url": "/?utm_source=homescreen",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Test your problem solving and coding skills."
+}
