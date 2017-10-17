@@ -82,8 +82,7 @@
   },
   "defaults": {
     "styleExt": "sass",
-    "component": {
-    }
+    "component": {}
   },
   "warnings": {
     "typescriptMismatch": false

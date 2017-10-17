@@ -1,0 +1,23 @@
+<section class="hero is-danger">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-2"></div>
+        <div class="column">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">Upcoming Tournaments</p>
+            </header>
+            <div class="card-content">
+              <a class="panel-block" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10]">Problem {{i}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-2"></div>
+      </div>
+      <div class="columns is-centered">
+        <a class="button is-danger is-outlined is-inverted">View Tournament Schedule</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+@import "settings"
+
+/// Font Awesome
+$fa-font-path: "~font-awesome/fonts"
+@import "~font-awesome/scss/font-awesome"
+
+/// Elements
+
+// Buttons
+$button-shadow-color: rgba(34, 36, 38, 0.1)
+$button-bevel-size: 0 -0.15em 0 0
+$button-active-bevel-size: 0 -0.1em 0 0
+$button-shadow-size: 0 0 0.15em 0
+$button-focus-box-shadow-size: 0 0 0.2em 0.15em
+$button-focus-box-shadow-color: rgba($link, 0.5)
+
+.button:not(.is-outlined):not(.is-text)
+  box-shadow: $button-bevel-size $button-shadow-color inset, $button-shadow-size $button-shadow-color
+  &:focus,
+  &.is-focused
+    &:not(:active)
+      box-shadow: $button-bevel-size $button-shadow-color inset, $button-focus-box-shadow-size $button-focus-box-shadow-color
+  &:active,
+  &.is-active
+    box-shadow: $button-active-bevel-size $button-shadow-color inset
+    padding-top: calc(0.375em + 1px)
+  @each $name, $pair in $colors
+    $color: nth($pair, 1)
+    &.is-#{$name}
+      &:focus,
+      &.is-focused
+        &:not(:active)
+          box-shadow: $button-bevel-size $button-shadow-color inset, $button-focus-box-shadow-size rgba($color, 0.5)
+  &.is-white,
+  &.is-light,
+  &.is-inverted
+    border-color: $grey-lighter
+
+.button.is-outlined
+  &:active,
+  &.is-active
+    box-shadow: $button-focus-box-shadow-size $button-shadow-color inset
+
+/// Layout
+
+// Footer
+$footer-background-color: darken($primary, 50%)
+
+@import "~bulma/bulma"
