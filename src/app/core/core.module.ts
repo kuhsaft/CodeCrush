@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     FooterComponent
   ],
+  providers: [],
   exports: [
     NavbarComponent,
     FooterComponent

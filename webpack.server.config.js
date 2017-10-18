@@ -21,21 +21,25 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.ts$/, loader: 'ts-loader' }
+      { test: /\.ts$/, loader: 'ts-loader' },
+      {
+        test: /.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+        use: "url-loader?limit=100000"
+      }
     ]
   },
   plugins: [
     new webpack.ContextReplacementPlugin(
       // fixes WARNING Critical dependency: the request of a dependency is an expression
-      /(.+)?angular(\\|\/)core(.+)?/,
+      /(.+)?angular([\\\/])core(.+)?/,
       path.join(__dirname, 'src'), // location of your src
       {} // a map of your routes
     ),
     new webpack.ContextReplacementPlugin(
       // fixes WARNING Critical dependency: the request of a dependency is an expression
-      /(.+)?express(\\|\/)(.+)?/,
+      /(.+)?express([\\\/])(.+)?/,
       path.join(__dirname, 'src'),
       {}
     )
   ]
-}
+};
