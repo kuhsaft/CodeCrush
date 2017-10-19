@@ -1,5 +1,1 @@
-module.exports = [
-  '/',
-  '/lazy',
-  '/lazy/nested'
-];
+module.exports = [];

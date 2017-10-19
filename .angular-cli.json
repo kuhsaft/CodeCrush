@@ -21,7 +21,7 @@
       "prefix": "app",
       "serviceWorker": true,
       "styles": [
-        "app/styles/global.sass"
+        "styles/global.sass"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -46,7 +46,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "app/styles/global.sass"
+        "styles/global.sass"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

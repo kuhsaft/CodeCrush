@@ -9,7 +9,7 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     require([], () => {
       // Separate Font-Awesome into its own bundle
-      require('style-loader!app/styles/font-awesome.sass');
+      require('style-loader!../styles/font-awesome.sass');
     });
   }
 }
