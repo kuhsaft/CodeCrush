@@ -84,6 +84,11 @@
     "styleExt": "sass",
     "component": {}
   },
+  "stylePreprocessorOptions": {
+    "includePaths": [
+      "styles"
+    ]
+  },
   "warnings": {
     "typescriptMismatch": false
   }
