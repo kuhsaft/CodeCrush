@@ -23,6 +23,11 @@
       "styles": [
         "styles/global.sass"
       ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "styles"
+        ]
+      },
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -48,6 +53,11 @@
       "styles": [
         "styles/global.sass"
       ],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "styles"
+        ]
+      },
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -83,10 +93,5 @@
   "defaults": {
     "styleExt": "sass",
     "component": {}
-  },
-  "stylePreprocessorOptions": {
-    "includePaths": [
-      "styles"
-    ]
   }
 }
