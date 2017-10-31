@@ -1,6 +1,30 @@
 @import "settings"
 
+@import "~bulma/sass/base/all"
+
+/// Components
+// Navbar
+@import "~bulma/sass/components/navbar"
+
+// Panel
+@import "~bulma/sass/components/panel"
+
+// Cards
+@import "~bulma/sass/components/card"
+
+
 /// Elements
+// Container
+@import "~bulma/sass/elements/container"
+
+// Content
+@import "~bulma/sass/elements/content"
+
+// Icon
+@import "~bulma/sass/elements/icon"
+
+// Title
+@import "~bulma/sass/elements/title"
 
 // Buttons
 $button-shadow-color: rgba(34, 36, 38, 0.1)
@@ -9,6 +33,8 @@ $button-active-bevel-size: 0 -0.1em 0 0
 $button-shadow-size: 0 0 0.15em 0
 $button-focus-box-shadow-size: 0 0 0.2em 0.15em
 $button-focus-box-shadow-color: rgba($link, 0.5)
+
+@import "~bulma/sass/elements/button"
 
 .button:not(.is-outlined):not(.is-text)
   box-shadow: $button-bevel-size $button-shadow-color inset, $button-shadow-size $button-shadow-color
@@ -37,21 +63,19 @@ $button-focus-box-shadow-color: rgba($link, 0.5)
   &.is-active
     box-shadow: $button-focus-box-shadow-size $button-shadow-color inset
 
+
+/// Grid
+// Columns
+@import "~bulma/sass/grid/columns"
+
+
 /// Layout
+// Hero
+@import "~bulma/sass/layout/hero"
+
+// Section
+@import "~bulma/sass/layout/section"
 
 // Footer
 $footer-background-color: darken($primary, 50%)
-
-@import "~bulma/sass/base/all"
-@import "~bulma/sass/components/card"
-@import "~bulma/sass/components/navbar"
-@import "~bulma/sass/components/panel"
-@import "~bulma/sass/elements/button"
-@import "~bulma/sass/elements/container"
-@import "~bulma/sass/elements/content"
-@import "~bulma/sass/elements/icon"
-@import "~bulma/sass/elements/title"
-@import "~bulma/sass/grid/columns"
 @import "~bulma/sass/layout/footer"
-@import "~bulma/sass/layout/hero"
-@import "~bulma/sass/layout/section"
