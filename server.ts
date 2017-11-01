@@ -1,6 +1,5 @@
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
-import { renderModuleFactory } from '@angular/platform-server';
 import { enableProdMode } from '@angular/core';
 
 import * as spdy from 'spdy';
@@ -9,6 +8,7 @@ import * as express from 'express';
 import * as compression from 'compression';
 import { join } from 'path';
 import { readFileSync } from 'fs';
+import { isNullOrUndefined} from 'util';
 
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
@@ -18,9 +18,6 @@ const app = express();
 
 const PORT = process.env.PORT || 4000;
 const DIST_FOLDER = join(process.cwd(), 'dist');
-
-// Our index.html we'll use as our template
-const template = readFileSync(join(DIST_FOLDER, 'browser', 'index.html')).toString();
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main.bundle');
@@ -56,6 +53,14 @@ app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
 app.get('*', (req, res) => {
   res.render('index', { req });
 });
+
+if (isNullOrUndefined(process.env.SSL_KEY)) {
+  console.error('Environment variable "SSL_KEY" not defined!');
+}
+
+if (isNullOrUndefined(process.env.SSL_CERT)) {
+  console.error('Environment variable "SSL_CERT" not defined!');
+}
 
 const options = {
   key: readFileSync(process.env.SSL_KEY),
